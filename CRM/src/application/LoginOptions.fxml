@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane id="paneLoginOptions" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="453.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ControllerLoginOptions">
+   <children>
+      <Label layoutX="25.0" layoutY="52.0" prefHeight="17.0" prefWidth="69.0" text="Connection:" textFill="#acacac" />
+      <TextField fx:id="conntxt" layoutX="94.0" layoutY="48.0" prefHeight="25.0" prefWidth="344.0" />
+      <Button id="optionsOkBtn" fx:id="connOK" layoutX="176.0" layoutY="73.0" mnemonicParsing="false" onAction="#saveConnection" prefHeight="33.0" prefWidth="102.0" text="OK" textFill="#acacac">
+         <font>
+            <Font size="19.0" />
+         </font></Button>
+   </children>
+</Pane>

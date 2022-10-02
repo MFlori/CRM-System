@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="bp" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ControllerMain">
+   <top>
+      <HBox id="hbTop" prefHeight="40.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="98.0" prefWidth="832.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#goToTabKunden" prefWidth="130.0" text="Kunden" />
+                  <Button mnemonicParsing="false" onAction="#goToTabKontakte" prefWidth="130.0" text="Kontakte" />
+                  <Button mnemonicParsing="false" onAction="#goToTabAngebote" prefWidth="130.0" text="Angebote" />
+                  <Button mnemonicParsing="false" onAction="#goToTabProjekte" prefWidth="130.0" text="Projekte" />
+                  <Button mnemonicParsing="false" onAction="#goToTabMeetings" prefWidth="130.0" text="Meetings" />
+                  <Button mnemonicParsing="false" onAction="#goToTabAnrufe" prefHeight="26.0" prefWidth="130.0" text="Anrufe" />
+                  <Button mnemonicParsing="false" onAction="#goToTabDatenimport" prefHeight="26.0" prefWidth="144.0" text="Datenimport" />
+               </children></HBox>
+            <HBox alignment="CENTER_RIGHT" prefHeight="40.0" prefWidth="350.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Button fx:id="btnMinimize" mnemonicParsing="false" text="_" textAlignment="CENTER" />
+                  <Button mnemonicParsing="false" onAction="#close" text="x" textAlignment="CENTER" />
+               </children></HBox>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </HBox>
+   </top>
+   <center>
+      <TabPane id="mainTabPane" fx:id="mainTabPane" prefHeight="619.0" prefWidth="938.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+         <tabs>
+            <Tab fx:id="tabKunden" text="kunden">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="20.0" prefHeight="98.0" prefWidth="407.0" text="Kunden Übersicht">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="tableKunden" layoutX="20.0" layoutY="192.0" prefHeight="386.0" prefWidth="1462.0">
+                           <columns>
+                              <TableColumn fx:id="idKundeCol" prefWidth="73.60000324249268" text="KundenNr." />
+                              <TableColumn fx:id="nameCol" prefWidth="228.8000030517578" text="Firma" />
+                              <TableColumn fx:id="landCol" prefWidth="148.0" text="Land" />
+                              <TableColumn fx:id="plzCol" prefWidth="88.0" text="PLZ" />
+                              <TableColumn fx:id="ortCol" prefWidth="150.39999389648438" text="Ort" />
+                              <TableColumn fx:id="strasseCol" prefWidth="200.0" text="Strasse" />
+                              <TableColumn fx:id="vkgrCol" prefWidth="72.800048828125" text="Vkgr" />
+                              <TableColumn fx:id="suchbegriffCol" prefWidth="233.59991455078125" text="Suchbegriff" />
+                           </columns></TableView>
+                        <TextField fx:id="txtKundenNummerSearch" layoutX="140.0" layoutY="100.0" prefHeight="26.0" prefWidth="100.0" />
+                        <Label alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="20.0" layoutY="100.0" prefHeight="26.0" prefWidth="100.0" text="Kundennummer: " />
+                        <Button fx:id="btnKundenNummerSearch" layoutX="240.0" layoutY="100.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="60.0" text="suchen" />
+                        <TextField fx:id="txtKundenNameSearch" layoutX="140.0" layoutY="135.0" prefHeight="26.0" prefWidth="100.0" />
+                        <Label graphicTextGap="0.0" layoutX="20.0" layoutY="135.0" prefHeight="26.0" prefWidth="100.0" text=" Firma-Name:" />
+                        <Button fx:id="btnKundenNameSearch" layoutX="240.0" layoutY="135.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="60.0" text="suchen" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="tabKontakte" text="kontakte">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="20.0" prefHeight="98.0" prefWidth="422.0" text="Kontakte verwalten">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtKontakteSearch" layoutX="140.0" layoutY="100.0" prefHeight="26.0" prefWidth="100.0" />
+                        <Label alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="20.0" layoutY="100.0" prefHeight="26.0" prefWidth="100.0" text="Kundennummer: " />
+                        <Button fx:id="btnKontakteSearch" layoutX="240.0" layoutY="100.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="60.0" text="suchen" />
+                        <Label fx:id="lbAnsprechpartnerSort" layoutX="20.0" layoutY="139.0" prefHeight="26.0" prefWidth="725.0" text="alle Ansprechpartner:">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="tableAnsprechpartner" layoutX="20.0" layoutY="192.0" prefHeight="386.0" prefWidth="1462.0">
+                          <columns>
+                            <TableColumn fx:id="nachnameColPartner" prefWidth="180.0" text="Nachname" />
+                            <TableColumn fx:id="vornameColPartner" prefWidth="180.0" text="Vorname" />
+                              <TableColumn fx:id="kundeNameColPartner" prefWidth="200.0" text="Kunde" />
+                              <TableColumn fx:id="telefonColPartner" prefWidth="233.59994506835938" text="Telefon" />
+                              <TableColumn fx:id="emailColPartner" prefWidth="279.20001220703125" text="Email" />
+                              <TableColumn fx:id="funktionColPartner" prefWidth="188.7999267578125" text="Funktion" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="partnerNeu" layoutX="20.0" layoutY="592.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="200.0" text="neu" />
+                        <Button fx:id="partnerEdit" layoutX="240.0" layoutY="592.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="200.0" text="ändern" />
+                        <Button fx:id="partnerDelete" layoutX="460.0" layoutY="592.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="200.0" text="löschen" />
+                     </children>
+                  </AnchorPane>
+               </content></Tab>
+            <Tab fx:id="tabAngebote" text="angebote">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="20.0" prefHeight="98.0" prefWidth="422.0" text="Angebote verwalten">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Label>
+                        <RadioButton fx:id="rbtnAngebotAlle" layoutX="20.0" layoutY="80.0" mnemonicParsing="false" text="Angebote alle">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="tgAngebote" />
+                           </toggleGroup></RadioButton>
+                        <RadioButton fx:id="rbtnAngebotBestellt" layoutX="20.0" layoutY="100.0" mnemonicParsing="false" text="Angebote bestellt" toggleGroup="$tgAngebote" />
+                        <RadioButton fx:id="rbtnAngebotVerloren" layoutX="20.0" layoutY="120.0" mnemonicParsing="false" text="Angebote verloren" toggleGroup="$tgAngebote" />
+                        <RadioButton fx:id="rbtnAngebotOffen" layoutX="20.0" layoutY="140.0" mnemonicParsing="false" selected="true" text="Angebote offen" toggleGroup="$tgAngebote" />
+                        <TableView fx:id="tableAngebote" layoutX="20.0" layoutY="192.0" prefHeight="386.0" prefWidth="1462.0">
+                          <columns>
+                            <TableColumn fx:id="idAngebotColAngebot" prefWidth="87.19997787475586" text="Angebot-Nr" />
+                            <TableColumn fx:id="kundeNameColAngebot" prefWidth="200.0" text="Kunde" />
+                              <TableColumn fx:id="anfrageColAngebot" prefWidth="159.1999969482422" text="Anfrage" />
+                              <TableColumn fx:id="belegDatumColAngebot" prefWidth="90.0" resizable="false" text="Belegdatum" />
+                              <TableColumn fx:id="ablaufDatumColAngebot" prefWidth="90.0" resizable="false" text="Gültigkeit" />
+                              <TableColumn fx:id="angebotsWertColAngebot" prefWidth="126.4000244140625" text="Angebotswert" />
+                              <TableColumn fx:id="statusColAngebot" prefWidth="90.0" text="Status" />
+                              <TableColumn fx:id="partnerColAngebot" prefWidth="140.7999267578125" text="Partner" />
+                              <TableColumn fx:id="projektColAngebot" prefWidth="141.60003662109375" text="Projekt" />
+                              <TableColumn fx:id="notizColAngebot" prefWidth="330.0" text="Notiz" />
+                          </columns>
+                        </TableView>
+                        <TextField fx:id="txtKundenSearchAngebote" layoutX="120.0" layoutY="160.0" prefHeight="26.0" prefWidth="100.0" />
+                        <Label alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="20.0" layoutY="160.0" prefHeight="26.0" prefWidth="100.0" text="Kundennummer: " />
+                        <Button fx:id="btnKundenSearchAngebote" layoutX="220.0" layoutY="160.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="60.0" text="suchen" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="tabProjekte" text="projekte">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="20.0" prefHeight="98.0" prefWidth="422.0" text="Projekte verwalten">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Label>
+                        <RadioButton fx:id="rbtnProjektAbgeschlossen" layoutX="20.0" layoutY="110.0" mnemonicParsing="false" text="Projekte abgeschlossen">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="tgProjekte" />
+                           </toggleGroup></RadioButton>
+                        <RadioButton fx:id="rbtnProjektLaufend" layoutX="20.0" layoutY="90.0" mnemonicParsing="false" selected="true" text="Projekte laufend" toggleGroup="$tgProjekte" />
+                        <TableView fx:id="tableProjekte" layoutX="20.0" layoutY="192.0" prefHeight="386.0" prefWidth="1462.0">
+                          <columns>
+                            <TableColumn fx:id="idProjektColProjekt" prefWidth="75.0" text="Projekt-Nr." />
+                            <TableColumn fx:id="kundeNameColProjekt" prefWidth="168.80006408691406" text="Kunde" />
+                              <TableColumn fx:id="projektNameColProjekt" prefWidth="143.99993896484375" text="Projektname" />
+                              <TableColumn fx:id="projektStartColProjekt" prefWidth="75.0" text="Startdatum" />
+                              <TableColumn fx:id="statusColProjekt" prefWidth="90.0" text="Status" />
+                              <TableColumn fx:id="angeboteColProjekt" prefWidth="75.0" text="Angebote" />
+                              <TableColumn fx:id="wertColProjekt" prefWidth="167.199951171875" text="Angebotswert gesamt" />
+                              <TableColumn fx:id="partnerNameColProjekt" prefWidth="200.0" text="Ansprechpartner" />
+                              <TableColumn fx:id="notizColProjekt" prefWidth="450.0" text="Notiz" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="projektNeu" layoutX="20.0" layoutY="592.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="200.0" text="neu" />
+                        <Button fx:id="projektEdit" layoutX="240.0" layoutY="592.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="200.0" text="ändern" />
+                        <Button fx:id="projektDelete" layoutX="460.0" layoutY="592.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="200.0" text="löschen" />
+                        <Label layoutX="20.0" layoutY="134.0" prefHeight="26.0" prefWidth="102.0" text="Kundennummer:" />
+                        <TextField fx:id="txtProjekteSearch" layoutX="123.0" layoutY="133.0" prefHeight="26.0" prefWidth="100.0" />
+                        <Button fx:id="btnProjekteSearch" layoutX="223.0" layoutY="133.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="60.0" text="suchen" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="tabMeetings" text="meetings">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="20.0" prefHeight="98.0" prefWidth="422.0" text="Meetings Übersicht">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="tableMeetings" layoutX="20.0" layoutY="192.0" prefHeight="386.0" prefWidth="1462.0">
+                          <columns>
+                            <TableColumn fx:id="datumColMeetings" prefWidth="75.0" text="Datum" />
+                            <TableColumn fx:id="kundeColMeetings" prefWidth="120.80001831054688" text="Kunde" />
+                              <TableColumn fx:id="ansprechpartnerColMeetings" prefWidth="145.59999084472656" text="Ansprechpartner" />
+                              <TableColumn fx:id="angebotColMeetings" prefWidth="75.0" text="Angebot" />
+                              <TableColumn fx:id="projektColMeetings" prefWidth="137.60003662109375" text="Projekt" />
+                              <TableColumn fx:id="notizColMeetings" prefWidth="890.0" text="Notiz" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="btnChangeMeeting" layoutX="240.0" layoutY="592.0" mnemonicParsing="false" prefWidth="200.0" text="ändern" />
+                        <Button fx:id="btnDeleteMeeting" layoutX="460.0" layoutY="592.0" mnemonicParsing="false" prefWidth="200.0" text="löschen" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="tabAnrufe" text="anrufe">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="20.0" prefHeight="98.0" prefWidth="422.0" text="Anrufe Übersicht">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="tableAnrufe" layoutX="20.0" layoutY="192.0" prefHeight="386.0" prefWidth="1462.0">
+                           <columns>
+                              <TableColumn fx:id="datumColAnrufe" prefWidth="75.0" text="Datum" />
+                              <TableColumn fx:id="kundeColAnrufe" prefWidth="120.80001831054688" text="Kunde" />
+                              <TableColumn fx:id="ansprechpartnerColAnrufe" prefWidth="145.59999084472656" text="Ansprechpartner" />
+                              <TableColumn fx:id="angebotColAnrufe" prefWidth="75.0" text="Angebot" />
+                              <TableColumn fx:id="projektColAnrufe" prefWidth="137.60003662109375" text="Projekt" />
+                              <TableColumn fx:id="notizColAnrufe" prefWidth="890.0" text="Notiz" />
+                           </columns>
+                        </TableView>
+                        <Button fx:id="btnChangeAnruf" layoutX="240.0" layoutY="592.0" mnemonicParsing="false" prefWidth="200.0" text="ändern" />
+                        <Button fx:id="btnDeleteAnruf" layoutX="460.0" layoutY="592.0" mnemonicParsing="false" prefWidth="200.0" text="löschen" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="tabDatenimport" text="datenimport">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Label prefHeight="98.0" prefWidth="422.0" text="Datenimport View">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="kundenImportPath" layoutX="63.0" layoutY="160.0" prefHeight="29.0" prefWidth="242.0" />
+                        <TextField fx:id="angebotImportPath" layoutX="64.0" layoutY="271.0" prefHeight="28.0" prefWidth="242.0" />
+                        <Label layoutX="63.0" layoutY="141.0" prefHeight="18.0" prefWidth="178.0" text="Kundenimport Datei angeben:" />
+                        <Label layoutX="62.0" layoutY="247.0" prefHeight="18.0" prefWidth="178.0" text="Angebotimport Datei angeben:" />
+                        <Button fx:id="kundenImportStart" layoutX="352.0" layoutY="162.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="188.0" text="starte Kunden-Update" />
+                        <Button fx:id="angebotImportStart" layoutX="352.0" layoutY="273.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="188.0" text="starte Angebots-Update" />
+                        <Button fx:id="kundenChooser" layoutX="305.0" layoutY="160.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="24.0" text="..." />
+                        <Button fx:id="angebotChooser" layoutX="305.0" layoutY="270.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="24.0" text="..." />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+   </center>
+</BorderPane>

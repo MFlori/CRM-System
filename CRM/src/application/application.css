@@ -1,0 +1,55 @@
+.root{
+    -fx-accent: #d3d3d3;
+    -fx-focus-color: #d3d3d3;
+}
+
+#hbTop{
+	-fx-background-color: #2d3647;
+}
+#hbTop .button{
+	-fx-background-color: #2d3647;
+    -fx-font-size: 16 pt;
+    -fx-font-family: "LatoBold, sans-serif";
+    -fx-text-fill: #fafafa;
+}
+
+#hbTop .button:hover{
+   -fx-background-color: #5a616d;
+}
+
+#mainTabPane {
+    -fx-tab-max-height: 0;
+} 
+#mainTabPane .tab-header-area {
+    visibility: hidden;
+}
+
+#paneLogin {
+	-fx-background-radius: 18 18 18 18;
+    -fx-border-radius: 18 18 18 18;
+    -fx-background-color:  linear-gradient(to top, #2d3647, #000000);
+    -fx-border-width: 1;
+    -fx-border-color: #2d3647;
+}
+
+#paneLoginOptions {
+	-fx-background-radius: 18 18 18 18;
+    -fx-border-radius: 18 18 18 18;
+    -fx-background-color:  linear-gradient(to top, #2d3647, #000000);
+    -fx-border-width: 1;
+    -fx-border-color: #2d3647;
+}
+
+#loginBtn {
+	-fx-background-color:  transparent;
+}
+
+#loginBtn:hover {
+	-fx-text-fill: #fafafa;
+}
+#optionsOkBtn {
+	-fx-background-color:  transparent;
+}
+#optionsOkBtn:hover {
+	-fx-text-fill: #fafafa;
+}
